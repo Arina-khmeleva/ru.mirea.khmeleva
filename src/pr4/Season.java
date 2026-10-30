@@ -1,0 +1,36 @@
+package pr4;
+
+public enum Season {
+    WINTER(-10.0),
+    SPRING(10.0),
+    SUMMER(25.0) {
+        @Override
+        public String getDescription() {
+            return "Теплое время года";
+        }
+    },
+    AUTUMN(8.0);
+
+    private final double averageTemperature;
+
+    Season(double averageTemperature) {
+        this.averageTemperature = averageTemperature;
+    }
+
+    public double getAverageTemperature() {
+        return averageTemperature;
+    }
+
+    public String getDescription() {
+        return "Холодное время года";
+    }
+
+    public static void printFavoriteSeason(Season season) {
+        switch (season) {
+            case WINTER: System.out.println("Я люблю зиму");  break;
+            case SPRING: System.out.println("Я люблю весну"); break;
+            case SUMMER: System.out.println("Я люблю лето");  break;
+            case AUTUMN: System.out.println("Я люблю осень"); break;
+        }
+    }
+}
